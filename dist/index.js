@@ -30,7 +30,9 @@ const routes = __importStar(require("./routes"));
 dotenv_1.default.config();
 const port = process.env.SERVER_PORT;
 const app = express_1.default();
-// confugure express to use EJS
+// configure express to parse incoming JSON data
+app.use(express_1.default.json());
+// configure express to use EJS
 app.set("views", path_1.default.join(__dirname, "views"));
 app.set("view engine", "ejs");
 // configure session auth
